@@ -12,6 +12,7 @@ public class MenuHotel {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar meu de hotel
         do {
             System.out.println("\n****CRUD da tabela hotel****");
             System.out.println("\n Selecione uma da opcoes:\n1-Inserir\n2-listar\n3-atualizar\n4-deletar\n5-Sair");
@@ -39,6 +40,7 @@ public class MenuHotel {
         }while (op!=5);
 
     }
+    //inserir novo hotel
     public void inserir(){
         Scanner input = new Scanner(System.in);
         String str;
@@ -55,7 +57,7 @@ public class MenuHotel {
         hotelDAO.inserir(hotel);
         System.out.println("Inserido com sucesso");
     }
-
+//listar registos de hoteis
     public void listar(){
         Hotel hotel = new Hotel();
         HotelDAO hotelDAO = new HotelDAO();
@@ -66,7 +68,7 @@ public class MenuHotel {
             System.out.println(hotl.getId()+" "+hotl.getNome()+" "+hotl.getLocalizacao());
         }
     }
-
+//remover registo de hotel
     public void deletar(){
         HotelDAO hotelDAO = new HotelDAO();
         Scanner input = new Scanner(System.in);
@@ -78,7 +80,7 @@ public class MenuHotel {
         hotelDAO.deletar(op);
         System.out.println("Deletado com sucesso");
     }
-
+//atualizar registo de hotel
     public void  atualizar(){
         HotelDAO hotelDAO = new HotelDAO();
         Hotel hotel = new Hotel();

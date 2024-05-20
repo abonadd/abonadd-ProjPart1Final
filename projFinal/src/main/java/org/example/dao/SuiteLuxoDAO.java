@@ -14,7 +14,7 @@ import java.util.List;
 public class SuiteLuxoDAO {
 
     private Connection connection;
-
+// obter registro de suite luxo
     public List<SuiteLuxo> listar() {
         String sql = "SELECT * FROM suite_luxo";
         List<SuiteLuxo> retorno = new ArrayList<>();
@@ -38,7 +38,7 @@ public class SuiteLuxoDAO {
             throw new RuntimeException(e);
         }
     }
-
+//inserir registo de suite luxo
     public boolean inserir(SuiteLuxo suite) {
         String sql = "INSERT INTO suite_luxo (hotel_id, tipo, preco_base, quantidade_de_leitos, descricao, reservado) VALUES (?, ?, ?, ?, ?, ?)";
         try {
@@ -56,7 +56,7 @@ public class SuiteLuxoDAO {
             throw new RuntimeException(e);
         }
     }
-
+//atualiza registo de suite luxo
     public boolean atualizar(SuiteLuxo suite, Integer id) {
         String sql = "UPDATE suite_luxo SET hotel_id = ?, tipo = ?, preco_base = ?, quantidade_de_leitos = ?, descricao = ?, reservado = ? WHERE id = ?";
         try {
@@ -75,7 +75,7 @@ public class SuiteLuxoDAO {
             throw new RuntimeException(e);
         }
     }
-
+//remove registro de suite luxo
     public boolean deletar(Integer id) {
         String sql = "DELETE FROM suite_luxo WHERE id = ?";
         try {

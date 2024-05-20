@@ -12,6 +12,7 @@ public class MenuUtilizador {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar menu principal
         do {
             System.out.println("\n****CRUD da tabela utilizador****");
             System.out.println("\nSelecione uma das opcoes:\n1-Inserir\n2-Listar\n3-Atualizar\n4-Deletar\n5-Sair");
@@ -38,7 +39,7 @@ public class MenuUtilizador {
             }
         } while (op != 5);
     }
-
+//inserir novo utilizador
     public void inserir() {
         Scanner input = new Scanner(System.in);
         UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
@@ -64,7 +65,7 @@ public class MenuUtilizador {
         utilizadorDAO.inserir(utilizador);
         System.out.println("Inserido com sucesso");
     }
-
+//listar utlizadores
     public void listar() {
         UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
         List<Utilizador> listUtilizador = utilizadorDAO.listar();
@@ -73,7 +74,7 @@ public class MenuUtilizador {
             System.out.println(utilizador.getId() + " | " + utilizador.getNome() + " | " + utilizador.getEmail() + " | " + utilizador.getTelefone() + " | " + utilizador.getTipo());
         }
     }
-
+//remover utilizadores
     public void deletar() {
         UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
         Scanner input = new Scanner(System.in);
@@ -85,7 +86,7 @@ public class MenuUtilizador {
         utilizadorDAO.deletar(op);
         System.out.println("Deletado com sucesso");
     }
-
+//atualizar utilizadores
     public void atualizar() {
         UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
         Utilizador utilizador = new Utilizador();

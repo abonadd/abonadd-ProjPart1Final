@@ -18,7 +18,7 @@ public class Logar {
         int op;
         String nome, pass;
         Utilizador.tipoUtilizador tipo = null;
-
+//opcoes de login
         do {
             System.out.println("\n1-Administrador\n2-Utilizador\n3-Sair");
             System.out.println("Escolher:");
@@ -56,7 +56,7 @@ public class Logar {
             }
         } while (op != 3);
     }
-
+//verificar se o utlizador existe no sistema
     public Utilizador.tipoUtilizador verificarUtilizador(String nome, String pass) {
         UtilizadorDAO dao = new UtilizadorDAO();
         List<Utilizador> list = dao.listar();

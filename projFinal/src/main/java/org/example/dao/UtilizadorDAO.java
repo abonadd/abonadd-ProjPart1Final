@@ -13,7 +13,7 @@ import java.util.List;
 public class UtilizadorDAO {
 
     private Connection connection;
-
+//obter registos de utilizador
     public List<Utilizador> listar() {
         String sql = "SELECT * FROM utilizador";
         List<Utilizador> retorno = new ArrayList<>();
@@ -36,7 +36,7 @@ public class UtilizadorDAO {
             throw new RuntimeException(e);
         }
     }
-
+//inserir registos de utlizador
     public boolean inserir(Utilizador utilizador) {
         String sql = "INSERT INTO utilizador (nome, email, password, telefone, tipo) VALUES (?, ?, ?, ?, ?)";
         try {
@@ -53,7 +53,7 @@ public class UtilizadorDAO {
             throw new RuntimeException(e);
         }
     }
-
+//atualiza registros de utilizador
     public boolean atualizar(Utilizador utilizador, Integer id) {
         String sql = "UPDATE utilizador SET nome = ?, email = ?, password = ?, telefone = ?, tipo = ? WHERE id = ?";
         try {
@@ -71,7 +71,7 @@ public class UtilizadorDAO {
             throw new RuntimeException(e);
         }
     }
-
+//remove registro de utilizador pelo id
     public boolean deletar(Integer id) {
         String sql = "DELETE FROM utilizador WHERE id = ?";
         try {

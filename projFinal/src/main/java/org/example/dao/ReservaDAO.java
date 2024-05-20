@@ -13,7 +13,7 @@ import java.util.List;
 public class ReservaDAO {
 
     private Connection connection;
-
+//obter registo de reserva
     public List<Reserva> listar() {
         String sql = "SELECT * FROM reserva";
         List<Reserva> reservas = new ArrayList<>();
@@ -36,7 +36,7 @@ public class ReservaDAO {
         }
         return reservas;
     }
-
+//inserir registro de reserva
     public boolean inserir(Reserva reserva) {
         String sql = "INSERT INTO reserva (cliente_id, acomodacao_id, data_inicio, data_fim, valor_total) VALUES (?, ?, ?, ?, ?)";
         try {
@@ -53,7 +53,7 @@ public class ReservaDAO {
             throw new RuntimeException("Erro ao inserir reserva: " + e.getMessage());
         }
     }
-
+//atualiza registro de reserva
     public boolean atualizar(Reserva reserva, Integer id) {
         String sql = "UPDATE reserva SET cliente_id = ?, acomodacao_id = ?, data_inicio = ?, data_fim = ?, valor_total = ? WHERE id = ?";
         try {
@@ -71,7 +71,7 @@ public class ReservaDAO {
             throw new RuntimeException("Erro ao atualizar reserva: " + e.getMessage());
         }
     }
-
+//remover registo de reserva
     public boolean deletar(Integer id) {
         String sql = "DELETE FROM reserva WHERE id = ?";
         try {

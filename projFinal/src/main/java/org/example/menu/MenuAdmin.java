@@ -12,6 +12,7 @@ public class MenuAdmin {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar menu do admin
         do {
             System.out.println("\n****CRUD da tabela admin****");
             System.out.println("\nSelecione uma das opcoes:\n1-Inserir\n2-Listar\n3-Atualizar\n4-Deletar\n5-Sair");
@@ -38,7 +39,7 @@ public class MenuAdmin {
             }
         } while (op != 5);
     }
-
+//inserir admin
     public void inserir() {
         Scanner input = new Scanner(System.in);
         AdminDAO adminDAO = new AdminDAO();
@@ -54,7 +55,7 @@ public class MenuAdmin {
         adminDAO.inserir(admin);
         System.out.println("Inserido com sucesso");
     }
-
+//obtter registro de admin
     public void listar() {
         AdminDAO adminDAO = new AdminDAO();
         List<Admin> listAdmin = new ArrayList<>();
@@ -64,7 +65,7 @@ public class MenuAdmin {
             System.out.println(admin.getId() + " | " + admin.getNome() + " | " + admin.getPassword());
         }
     }
-
+//remover admin
     public void deletar() {
         AdminDAO adminDAO = new AdminDAO();
         Scanner input = new Scanner(System.in);
@@ -76,7 +77,7 @@ public class MenuAdmin {
         adminDAO.deletar(op);
         System.out.println("Deletado com sucesso");
     }
-
+//atualizar admin
     public void atualizar() {
         AdminDAO adminDAO = new AdminDAO();
         Admin admin = new Admin();

@@ -11,6 +11,7 @@ public class MenuReserva {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar menu para reserva
         ReservaDAO reservaDAO = new ReservaDAO();
 
         do {
@@ -46,7 +47,7 @@ public class MenuReserva {
 
         } while (op != 5);
     }
-
+//obter registo de reserva
     public void listarReservas() {
         ReservaDAO reservaDAO = new ReservaDAO();
         List<Reserva> reservas = reservaDAO.listar();
@@ -60,7 +61,7 @@ public class MenuReserva {
             }
         }
     }
-
+//criar nova reserva
     public void criarReserva() {
         Scanner input = new Scanner(System.in);
         ReservaDAO reservaDAO = new ReservaDAO();
@@ -85,7 +86,7 @@ public class MenuReserva {
             System.out.println("Falha ao criar reserva.");
         }
     }
-
+//atualizar reserva
     public void atualizarReserva() {
         Scanner input = new Scanner(System.in);
         ReservaDAO reservaDAO = new ReservaDAO();
@@ -112,7 +113,7 @@ public class MenuReserva {
             System.out.println("Falha ao atualizar reserva.");
         }
     }
-
+//remover reserva
     public void deletarReserva() {
         Scanner input = new Scanner(System.in);
         ReservaDAO reservaDAO = new ReservaDAO();

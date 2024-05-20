@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MenuPrincipal {
+    //fazer login como administrador
     public void loginAdmin(){
         AdminDAO dao = new AdminDAO();
         List<Admin> list = new ArrayList<>();
@@ -30,6 +31,7 @@ public class MenuPrincipal {
             menuPrincipal();
         }
     }
+    //gerenciar menuprincipal
     public void menuPrincipal(){
         MenuAcomodacao menuAcomodacao = new MenuAcomodacao();
         MenuHotel menuHotel = new MenuHotel();

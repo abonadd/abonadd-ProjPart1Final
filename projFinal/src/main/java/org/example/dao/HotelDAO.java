@@ -13,7 +13,7 @@ import java.util.List;
 public class HotelDAO {
 
         private Connection connection;
-
+//obter registos do hotel
         public List<Hotel> listar(){
             String sql = "SELECT * FROM hotel";
             List<Hotel> retorno = new ArrayList<>();
@@ -34,7 +34,7 @@ public class HotelDAO {
                 //System.out.println("Error na connect");
             }
         }
-
+//adicionar registo de hotel
         public boolean inserir(Hotel hotel){
             String sql = "INSERT INTO hotel (nome,localizacao) values(?,?)";
             try {
@@ -50,7 +50,7 @@ public class HotelDAO {
                 throw new RuntimeException(e);
             }
         }
-
+//atualizar registo de hotel
         public boolean atualizar(Hotel hotel, Integer id){
             String sql = "UPDATE hotel SET nome=?,localizacao=? Where id=?";
             try {
@@ -65,7 +65,7 @@ public class HotelDAO {
                 throw new RuntimeException(e);
             }
         }
-
+//remover registo de hotel pelo id
         public boolean deletar(Integer id){
             String sql = "DELETE FROM hotel WHERE id=?";
             try {

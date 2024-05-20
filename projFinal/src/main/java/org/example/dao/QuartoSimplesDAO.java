@@ -13,7 +13,7 @@ import java.util.List;
 public class QuartoSimplesDAO {
 
     private Connection connection;
-
+//obter registo de quarto simples
     public List<QuartoSimples> listar() {
         String sql = "SELECT * FROM quarto_simples";
         List<QuartoSimples> retorno = new ArrayList<>();
@@ -37,7 +37,7 @@ public class QuartoSimplesDAO {
             throw new RuntimeException(e);
         }
     }
-
+//adiciona novo registro
     public boolean inserir(QuartoSimples quarto) {
         String sql = "INSERT INTO quarto_simples (hotel_id, tipo, preco_base, quantidade_de_leitos, descricao, reservado) VALUES (?, ?, ?, ?, ?, ?)";
         try {
@@ -55,7 +55,7 @@ public class QuartoSimplesDAO {
             throw new RuntimeException(e);
         }
     }
-
+//atualiza registro
     public boolean atualizar(QuartoSimples quarto, Integer id) {
         String sql = "UPDATE quarto_simples SET hotel_id = ?, tipo = ?, preco_base = ?, quantidade_de_leitos = ?, descricao = ?, reservado = ? WHERE id = ?";
         try {
@@ -74,7 +74,7 @@ public class QuartoSimplesDAO {
             throw new RuntimeException(e);
         }
     }
-
+//remove registo pelo id
     public boolean deletar(Integer id) {
         String sql = "DELETE FROM quarto_simples WHERE id = ?";
         try {

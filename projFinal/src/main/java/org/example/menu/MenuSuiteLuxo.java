@@ -14,6 +14,7 @@ public class MenuSuiteLuxo {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar menu de suite de luxo
         do {
             System.out.println("\n****CRUD da tabela suite_luxo****");
             System.out.println("\nSelecione uma das opções:\n1-Inserir\n2-Listar\n3-Atualizar\n4-Deletar\n5-Sair");
@@ -40,7 +41,7 @@ public class MenuSuiteLuxo {
             }
         } while (op != 5);
     }
-
+//inserir nova suite de luxo
     public void inserir() {
         Scanner input = new Scanner(System.in);
         Scanner input2 = new Scanner(System.in);
@@ -58,6 +59,7 @@ public class MenuSuiteLuxo {
         listHotel = hotelDAO.listar();
         System.out.println("\nHotel ID:");
         suite.setHote_id(input2.nextInt());
+        //mostra hoteis disponiveis
         for (Hotel x: listHotel){
            if (x.getId()==suite.getHote_id()){
                verf = true;
@@ -87,7 +89,7 @@ public class MenuSuiteLuxo {
         suiteLuxoDAO.inserir(suite);
         System.out.println("Inserido com sucesso");
     }
-
+//obter registos das suite de luxo
     public void listar() {
         SuiteLuxoDAO suiteLuxoDAO = new SuiteLuxoDAO();
         List<SuiteLuxo> listSuiteLuxo = suiteLuxoDAO.listar();
@@ -96,7 +98,7 @@ public class MenuSuiteLuxo {
             System.out.println(suite.getId() + " " + suite.getHote_id() + " " + suite.getTipo() + " " + suite.getPreco_base() + " " + suite.getQuantidadeDeLeitos() + " " + suite.getDescricao() + " " + suite.isReservado());
         }
     }
-
+//remover registro de suite luxo
     public void deletar() {
         SuiteLuxoDAO suiteLuxoDAO = new SuiteLuxoDAO();
         Scanner input = new Scanner(System.in);
@@ -108,7 +110,7 @@ public class MenuSuiteLuxo {
         suiteLuxoDAO.deletar(op);
         System.out.println("Deletado com sucesso");
     }
-
+//atuaizar registro de suite de luxo
     public void atualizar() {
         SuiteLuxoDAO suiteLuxoDAO = new SuiteLuxoDAO();
         SuiteLuxo suite = new SuiteLuxo();

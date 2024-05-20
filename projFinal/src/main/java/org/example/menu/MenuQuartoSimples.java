@@ -14,6 +14,7 @@ public class MenuQuartoSimples {
     public void menu() {
         Scanner input = new Scanner(System.in);
         int op;
+        //gerenciar menu para quarto simples
         do {
             System.out.println("\n****CRUD da tabela quarto_simples****");
             System.out.println("\nSelecione uma das opções:\n1-Inserir\n2-Listar\n3-Atualizar\n4-Deletar\n5-Sair");
@@ -40,7 +41,7 @@ public class MenuQuartoSimples {
             }
         } while (op != 5);
     }
-
+//inserir novo quarto simples
     public void inserir() {
         Scanner input = new Scanner(System.in);
         Scanner input2 = new Scanner(System.in);
@@ -88,7 +89,7 @@ public class MenuQuartoSimples {
         quartoSimplesDAO.inserir(quarto);
         System.out.println("Inserido com sucesso");
     }
-
+//atualizar quarto simples
     public void atualizar() {
         QuartoSimplesDAO quartoSimplesDAO = new QuartoSimplesDAO();
         QuartoSimples quarto = new QuartoSimples();
@@ -141,7 +142,7 @@ public class MenuQuartoSimples {
         quartoSimplesDAO.atualizar(quarto, op);
         System.out.println("Atualizado com sucesso");
     }
-
+//obter registro de quarto simples
     public void listar() {
         QuartoSimplesDAO quartoSimplesDAO = new QuartoSimplesDAO();
         List<QuartoSimples> listQuartoSimples = quartoSimplesDAO.listar();

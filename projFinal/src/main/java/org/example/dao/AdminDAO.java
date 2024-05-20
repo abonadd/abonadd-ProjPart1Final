@@ -13,7 +13,7 @@ import java.util.List;
 public class AdminDAO {
 
     private Connection connection;
-
+// listar admin
     public List<Admin> listar() {
         String sql = "SELECT * FROM admin";
         List<Admin> retorno = new ArrayList<>();
@@ -33,7 +33,7 @@ public class AdminDAO {
             throw new RuntimeException(e);
         }
     }
-
+//inserir admin
     public boolean inserir(Admin admin) {
         String sql = "INSERT INTO admin (nome, password) VALUES (?, ?)";
         try {
@@ -47,7 +47,7 @@ public class AdminDAO {
             throw new RuntimeException(e);
         }
     }
-
+//atualizar
     public boolean atualizar(Admin admin, Integer id) {
         String sql = "UPDATE admin SET nome = ?, password = ? WHERE id = ?";
         try {
@@ -62,7 +62,7 @@ public class AdminDAO {
             throw new RuntimeException(e);
         }
     }
-
+//remover pelo id
     public boolean deletar(Integer id) {
         String sql = "DELETE FROM admin WHERE id = ?";
         try {
